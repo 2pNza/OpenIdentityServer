@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
-using IdentityServer4.EntityFramework.Storage;
+using OpenIdentityServer.EntityFramework.Storage;
 using Microsoft.EntityFrameworkCore;
 
 namespace SqlServer
@@ -19,12 +19,14 @@ namespace SqlServer
         {
             var cn = Configuration.GetConnectionString("db");
 
-            services.AddOperationalDbContext(options => {
+            services.AddOperationalDbContext(options =>
+            {
                 options.ConfigureDbContext = b =>
                     b.UseSqlServer(cn, dbOpts => dbOpts.MigrationsAssembly(typeof(Startup).Assembly.FullName));
             });
 
-            services.AddConfigurationDbContext(options => {
+            services.AddConfigurationDbContext(options =>
+            {
                 options.ConfigureDbContext = b =>
                     b.UseSqlServer(cn, dbOpts => dbOpts.MigrationsAssembly(typeof(Startup).Assembly.FullName));
             });

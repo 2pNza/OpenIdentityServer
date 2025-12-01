@@ -1,14 +1,14 @@
 Adding new Protocols
 ====================
 
-IdentityServer4 allows adding support for other protocols besides the built-in 
+OpenIdentityServer allows adding support for other protocols besides the built-in 
 support for OpenID Connect and OAuth 2.0.
 
 You can add those additional protocol endpoints either as middleware or using e.g. MVC controllers.
 In both cases you have access to the ASP.NET Core DI system which allows re-using our
 internal services like access to client definitions or key material.
 
-A sample for adding WS-Federation support can be found `here <https://github.com/IdentityServer/IdentityServer4.WsFederation>`_.
+A sample for adding WS-Federation support can be found `here <https://github.com/IdentityServer/OpenIdentityServer.WsFederation>`_.
 
 Typical authentication workflow
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

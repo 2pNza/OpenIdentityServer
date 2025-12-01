@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using IdentityModel;
 
-namespace IdentityServer4.AspNetIdentity
+namespace OpenIdentityServer.AspNetIdentity
 {
     internal class UserClaimsFactory<TUser> : IUserClaimsPrincipalFactory<TUser>
         where TUser : class
@@ -42,7 +42,7 @@ namespace IdentityServer4.AspNetIdentity
                 identity.AddClaim(new Claim(JwtClaimTypes.PreferredUserName, username));
             }
 
-            if (!identity.HasClaim(x=>x.Type == JwtClaimTypes.Name))
+            if (!identity.HasClaim(x => x.Type == JwtClaimTypes.Name))
             {
                 identity.AddClaim(new Claim(JwtClaimTypes.Name, username));
             }

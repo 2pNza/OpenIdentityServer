@@ -5,7 +5,7 @@
 using System;
 using System.Linq;
 using IdentityModel;
-using IdentityServer4.KeyManagement.EntityFramework;
+using OpenIdentityServer.KeyManagement.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
@@ -43,7 +43,7 @@ namespace sample
                     ConfigureDbContext = b => b.UseSqlServer(cn),
                     LoggerFactory = LoggerFactory,
                 });
-                //.ProtectKeysWithCertificate(cert);
+            //.ProtectKeysWithCertificate(cert);
 
             var builder = services.AddIdentityServer()
                 .AddInMemoryIdentityResources(Config.GetIdentityResources())
@@ -53,7 +53,7 @@ namespace sample
                     options => // configuring options is optional :)
                     {
                         options.DeleteRetiredKeys = true;
-                        options.KeyType = IdentityServer4.KeyManagement.KeyType.RSA;
+                        options.KeyType = OpenIdentityServer.KeyManagement.KeyType.RSA;
 
                         // all of these values in here are changed for local testing
                         options.InitializationDuration = TimeSpan.FromSeconds(5);
@@ -68,11 +68,12 @@ namespace sample
                         options.Licensee = "your licensee";
                         options.License = "your license key";
                     })
-                    .PersistKeysToDatabase(new DatabaseKeyManagementOptions {
+                    .PersistKeysToDatabase(new DatabaseKeyManagementOptions
+                    {
                         ConfigureDbContext = b => b.UseSqlServer(cn),
                     })
                     .ProtectKeysWithDataProtection()
-                    //.EnableInMemoryCaching() // caching disabled unless explicitly enabled
+                //.EnableInMemoryCaching() // caching disabled unless explicitly enabled
                 ;
         }
 

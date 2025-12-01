@@ -1,9 +1,9 @@
 ﻿using FluentAssertions;
-using IdentityServer4.EntityFramework.DbContexts;
-using IdentityServer4.EntityFramework.Options;
-using IdentityServer4.EntityFramework.Stores;
-using IdentityServer4.Models;
-using IdentityServer4.Stores.Serialization;
+using OpenIdentityServer.EntityFramework.DbContexts;
+using OpenIdentityServer.EntityFramework.Options;
+using OpenIdentityServer.EntityFramework.Stores;
+using OpenIdentityServer.Models;
+using OpenIdentityServer.Stores.Serialization;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,11 +11,11 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using IdentityModel;
-using IdentityServer4.EntityFramework.Entities;
+using OpenIdentityServer.EntityFramework.Entities;
 using Microsoft.EntityFrameworkCore.InMemory.Infrastructure.Internal;
 using Xunit;
 
-namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
+namespace OpenIdentityServer.EntityFramework.IntegrationTests.Stores
 {
     public class DeviceFlowStoreTests : IntegrationTest<DeviceFlowStoreTests, PersistedGrantDbContext, OperationalStoreOptions>
     {
@@ -213,9 +213,9 @@ namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
                 var store = new DeviceFlowStore(context, new PersistentGrantSerializer(), FakeLogger<DeviceFlowStore>.Create());
                 code = await store.FindByUserCodeAsync(testUserCode);
             }
-            
-            code.Should().BeEquivalentTo(expectedDeviceCodeData, 
-                assertionOptions => assertionOptions.Excluding(x=> x.Subject));
+
+            code.Should().BeEquivalentTo(expectedDeviceCodeData,
+                assertionOptions => assertionOptions.Excluding(x => x.Subject));
 
             code.Subject.Claims.FirstOrDefault(x => x.Type == JwtClaimTypes.Subject && x.Value == expectedSubject).Should().NotBeNull();
         }
@@ -297,7 +297,7 @@ namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
             var unauthorizedDeviceCode = new DeviceCode
             {
                 ClientId = "device_flow",
-                RequestedScopes = new[] {"openid", "api1"},
+                RequestedScopes = new[] { "openid", "api1" },
                 CreationTime = new DateTime(2018, 10, 19, 16, 14, 29),
                 Lifetime = 300,
                 IsOpenId = true
@@ -381,13 +381,13 @@ namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
                 });
                 context.SaveChanges();
             }
-            
+
             using (var context = new PersistedGrantDbContext(options, StoreOptions))
             {
                 var store = new DeviceFlowStore(context, new PersistentGrantSerializer(), FakeLogger<DeviceFlowStore>.Create());
                 await store.RemoveByDeviceCodeAsync(testDeviceCode);
             }
-            
+
             using (var context = new PersistedGrantDbContext(options, StoreOptions))
             {
                 context.DeviceFlowCodes.FirstOrDefault(x => x.UserCode == testUserCode).Should().BeNull();

@@ -204,11 +204,11 @@ tools/
 .vscode
 
 # IdentityServer temp files
-identityserver4_log.txt
+openidentityserver_log.txt
 tempkey.rsa
 samples/KeyManagement/FileSystem/dataprotectionkeys/
 samples/KeyManagement/FileSystem/signingkeys/
 workspace.xml
 
-src/IdentityServer4/host/identityserver.db
+src/OpenIdentityServer/host/identityserver.db
 tempkey.jwk

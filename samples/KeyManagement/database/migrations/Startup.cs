@@ -1,4 +1,4 @@
-﻿using IdentityServer4.KeyManagement.EntityFramework;
+﻿using OpenIdentityServer.KeyManagement.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +20,8 @@ namespace migrations
         {
             var cn = Configuration.GetConnectionString("db");
 
-            services.AddKeyManagementDbContext(new DatabaseKeyManagementOptions {
+            services.AddKeyManagementDbContext(new DatabaseKeyManagementOptions
+            {
                 ConfigureDbContext = b =>
                      b.UseSqlServer(cn, dbOpts => dbOpts.MigrationsAssembly(typeof(Startup).Assembly.FullName))
             });

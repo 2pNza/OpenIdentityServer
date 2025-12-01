@@ -2,23 +2,23 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.using System.Collections.Generic;
 
 using System.Collections.Generic;
-using IdentityServer4;
-using IdentityServer4.Models;
+using OpenIdentityServer;
+using OpenIdentityServer.Models;
 
 namespace IdentityServerHost.Configuration
 {
     public static class ClientsWeb
     {
-        static string[] allowedScopes = 
+        static string[] allowedScopes =
         {
             IdentityServerConstants.StandardScopes.OpenId,
             IdentityServerConstants.StandardScopes.Profile,
             IdentityServerConstants.StandardScopes.Email,
-            "resource1.scope1", 
+            "resource1.scope1",
             "resource2.scope1",
             "transaction"
         };
-        
+
         public static IEnumerable<Client> Get()
         {
             return new List<Client>
@@ -31,11 +31,11 @@ namespace IdentityServerHost.Configuration
                     ClientId = "js_oidc",
                     ClientName = "JavaScript OIDC Client",
                     ClientUri = "http://identityserver.io",
-                    
+
                     AllowedGrantTypes = GrantTypes.Code,
                     RequireClientSecret = false,
-                    
-                    RedirectUris = 
+
+                    RedirectUris =
                     {
                         "https://localhost:44300/index.html",
                         "https://localhost:44300/callback.html",
@@ -55,7 +55,7 @@ namespace IdentityServerHost.Configuration
                 new Client
                 {
                     ClientId = "mvc.tokenmanagement",
-                    
+
                     ClientSecrets =
                     {
                         new Secret("secret".Sha256())

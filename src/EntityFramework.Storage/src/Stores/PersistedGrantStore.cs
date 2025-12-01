@@ -5,21 +5,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using IdentityServer4.EntityFramework.Interfaces;
-using IdentityServer4.EntityFramework.Mappers;
-using IdentityServer4.Models;
-using IdentityServer4.Stores;
+using OpenIdentityServer.EntityFramework.Interfaces;
+using OpenIdentityServer.EntityFramework.Mappers;
+using OpenIdentityServer.Models;
+using OpenIdentityServer.Stores;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using System;
-using IdentityServer4.Extensions;
+using OpenIdentityServer.Extensions;
 
-namespace IdentityServer4.EntityFramework.Stores
+namespace OpenIdentityServer.EntityFramework.Stores
 {
     /// <summary>
     /// Implementation of IPersistedGrantStore thats uses EF.
     /// </summary>
-    /// <seealso cref="IdentityServer4.Stores.IPersistedGrantStore" />
+    /// <seealso cref="OpenIdentityServer.Stores.IPersistedGrantStore" />
     public class PersistedGrantStore : IPersistedGrantStore
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace IdentityServer4.EntityFramework.Stores
 
             var persistedGrants = await Filter(Context.PersistedGrants.AsQueryable(), filter).ToArrayAsync();
             persistedGrants = Filter(persistedGrants.AsQueryable(), filter).ToArray();
-            
+
             var model = persistedGrants.Select(x => x.ToModel());
 
             Logger.LogDebug("{persistedGrantCount} persisted grants found for {@filter}", persistedGrants.Length, filter);
@@ -104,7 +104,7 @@ namespace IdentityServer4.EntityFramework.Stores
         {
             var persistedGrant = (await Context.PersistedGrants.Where(x => x.Key == key).ToArrayAsync())
                 .SingleOrDefault(x => x.Key == key);
-            if (persistedGrant!= null)
+            if (persistedGrant != null)
             {
                 Logger.LogDebug("removing {persistedGrantKey} persisted grant from database", key);
 
@@ -114,7 +114,7 @@ namespace IdentityServer4.EntityFramework.Stores
                 {
                     await Context.SaveChangesAsync();
                 }
-                catch(DbUpdateConcurrencyException ex)
+                catch (DbUpdateConcurrencyException ex)
                 {
                     Logger.LogInformation("exception removing {persistedGrantKey} persisted grant from database: {error}", key, ex.Message);
                 }

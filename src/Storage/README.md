@@ -1,3 +1,3 @@
-# IdentityServer4.Storage
+# OpenIdentityServer.Storage
 
-IdentityServer4.Storage contains all the models and storage interfaces for IdentityServer 4 configuration data.
+OpenIdentityServer.Storage contains all the models and storage interfaces for IdentityServer 4 configuration data.

@@ -1,3 +1,3 @@
 rm -rf ./nuget
 
-rm -rf ~/.nuget/packages/identityserver4
+rm -rf ~/.nuget/packages/openidentityserver

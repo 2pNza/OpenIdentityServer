@@ -2,12 +2,12 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-using IdentityServer4.EntityFramework.Entities;
-using IdentityServer4.EntityFramework.Options;
+using OpenIdentityServer.EntityFramework.Entities;
+using OpenIdentityServer.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace IdentityServer4.EntityFramework.Extensions
+namespace OpenIdentityServer.EntityFramework.Extensions
 {
     /// <summary>
     /// Extension methods to define the database schema for the configuration and operational data stores.
@@ -49,7 +49,7 @@ namespace IdentityServer4.EntityFramework.Extensions
 
                 client.HasIndex(x => x.ClientId).IsUnique();
 
-                client.HasMany(x => x.AllowedGrantTypes).WithOne(x => x.Client).HasForeignKey(x=>x.ClientId).IsRequired().OnDelete(DeleteBehavior.Cascade);
+                client.HasMany(x => x.AllowedGrantTypes).WithOne(x => x.Client).HasForeignKey(x => x.ClientId).IsRequired().OnDelete(DeleteBehavior.Cascade);
                 client.HasMany(x => x.RedirectUris).WithOne(x => x.Client).HasForeignKey(x => x.ClientId).IsRequired().OnDelete(DeleteBehavior.Cascade);
                 client.HasMany(x => x.PostLogoutRedirectUris).WithOne(x => x.Client).HasForeignKey(x => x.ClientId).IsRequired().OnDelete(DeleteBehavior.Cascade);
                 client.HasMany(x => x.AllowedScopes).WithOne(x => x.Client).HasForeignKey(x => x.ClientId).IsRequired().OnDelete(DeleteBehavior.Cascade);
@@ -166,7 +166,7 @@ namespace IdentityServer4.EntityFramework.Extensions
                 // apparently anything over 4K converts to nvarchar(max) on SqlServer
                 codes.Property(x => x.Data).HasMaxLength(50000).IsRequired();
 
-                codes.HasKey(x => new {x.UserCode});
+                codes.HasKey(x => new { x.UserCode });
 
                 codes.HasIndex(x => x.DeviceCode).IsUnique();
                 codes.HasIndex(x => x.Expiration);

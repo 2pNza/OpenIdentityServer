@@ -8,7 +8,7 @@ using System.Security.Claims;
 
 #pragma warning disable 1591
 
-namespace IdentityServer4.Stores.Serialization
+namespace OpenIdentityServer.Stores.Serialization
 {
     public class ClaimConverter : JsonConverter
     {

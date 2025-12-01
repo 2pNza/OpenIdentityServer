@@ -5,7 +5,7 @@
 using System;
 using System.Security.Claims;
 
-namespace IdentityServer4.Models
+namespace OpenIdentityServer.Models
 {
     /// <summary>
     /// A client claim
@@ -16,7 +16,7 @@ namespace IdentityServer4.Models
         /// The claim type
         /// </summary>
         public string Type { get; set; }
-        
+
         /// <summary>
         /// The claim value
         /// </summary>
@@ -61,7 +61,7 @@ namespace IdentityServer4.Models
         /// <inheritdoc/>
         public override int GetHashCode()
         {
-            unchecked 
+            unchecked
             {
                 int hash = 17;
 

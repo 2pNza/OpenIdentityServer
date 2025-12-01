@@ -2,13 +2,13 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-using IdentityServer4.EntityFramework.Entities;
-using IdentityServer4.Models;
+using OpenIdentityServer.EntityFramework.Entities;
+using OpenIdentityServer.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 
-namespace IdentityServer4.EntityFramework.Mappers
+namespace OpenIdentityServer.EntityFramework.Mappers
 {
     /// <summary>
     /// Extension methods to map to/from entity/model for clients.
@@ -62,10 +62,10 @@ namespace IdentityServer4.EntityFramework.Mappers
                 ConsentLifetime = entity.ConsentLifetime,
                 AbsoluteRefreshTokenLifetime = entity.AbsoluteRefreshTokenLifetime,
                 SlidingRefreshTokenLifetime = entity.SlidingRefreshTokenLifetime,
-                RefreshTokenUsage = (TokenUsage) entity.RefreshTokenUsage,
+                RefreshTokenUsage = (TokenUsage)entity.RefreshTokenUsage,
                 UpdateAccessTokenClaimsOnRefresh = entity.UpdateAccessTokenClaimsOnRefresh,
-                RefreshTokenExpiration = (TokenExpiration) entity.RefreshTokenExpiration,
-                AccessTokenType = (AccessTokenType) entity.AccessTokenType,
+                RefreshTokenExpiration = (TokenExpiration)entity.RefreshTokenExpiration,
+                AccessTokenType = (AccessTokenType)entity.AccessTokenType,
                 EnableLocalLogin = entity.EnableLocalLogin,
                 IdentityProviderRestrictions = entity.IdentityProviderRestrictions?.Select(r => r.Provider).ToList() ?? new List<string>(),
                 IncludeJwtId = entity.IncludeJwtId,
@@ -145,10 +145,10 @@ namespace IdentityServer4.EntityFramework.Mappers
                 ConsentLifetime = model.ConsentLifetime,
                 AbsoluteRefreshTokenLifetime = model.AbsoluteRefreshTokenLifetime,
                 SlidingRefreshTokenLifetime = model.SlidingRefreshTokenLifetime,
-                RefreshTokenUsage = (int) model.RefreshTokenUsage,
+                RefreshTokenUsage = (int)model.RefreshTokenUsage,
                 UpdateAccessTokenClaimsOnRefresh = model.UpdateAccessTokenClaimsOnRefresh,
-                RefreshTokenExpiration = (int) model.RefreshTokenExpiration,
-                AccessTokenType = (int) model.AccessTokenType,
+                RefreshTokenExpiration = (int)model.RefreshTokenExpiration,
+                AccessTokenType = (int)model.AccessTokenType,
                 EnableLocalLogin = model.EnableLocalLogin,
                 IdentityProviderRestrictions = model.IdentityProviderRestrictions?.Select(r => new Entities.ClientIdPRestriction
                 {

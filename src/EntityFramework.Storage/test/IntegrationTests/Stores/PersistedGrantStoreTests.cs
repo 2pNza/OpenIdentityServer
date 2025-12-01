@@ -7,17 +7,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
-using IdentityServer4.EntityFramework.DbContexts;
-using IdentityServer4.EntityFramework.Mappers;
-using IdentityServer4.EntityFramework.Options;
-using IdentityServer4.EntityFramework.Stores;
-using IdentityServer4.Models;
-using IdentityServer4.Stores;
+using OpenIdentityServer.EntityFramework.DbContexts;
+using OpenIdentityServer.EntityFramework.Mappers;
+using OpenIdentityServer.EntityFramework.Options;
+using OpenIdentityServer.EntityFramework.Stores;
+using OpenIdentityServer.Models;
+using OpenIdentityServer.Stores;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.DataCollection;
 using Xunit;
 
-namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
+namespace OpenIdentityServer.EntityFramework.IntegrationTests.Stores
 {
     public class PersistedGrantStoreTests : IntegrationTest<PersistedGrantStoreTests, PersistedGrantDbContext, OperationalStoreOptions>
     {
@@ -195,7 +195,7 @@ namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
                 context.PersistedGrants.Add(persistedGrant.ToEntity());
                 context.SaveChanges();
             }
-            
+
             using (var context = new PersistedGrantDbContext(options, StoreOptions))
             {
                 var store = new PersistedGrantStore(context, FakeLogger<PersistedGrantStore>.Create());
@@ -223,9 +223,10 @@ namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
             using (var context = new PersistedGrantDbContext(options, StoreOptions))
             {
                 var store = new PersistedGrantStore(context, FakeLogger<PersistedGrantStore>.Create());
-                await store.RemoveAllAsync(new PersistedGrantFilter { 
-                    SubjectId = persistedGrant.SubjectId, 
-                    ClientId = persistedGrant.ClientId 
+                await store.RemoveAllAsync(new PersistedGrantFilter
+                {
+                    SubjectId = persistedGrant.SubjectId,
+                    ClientId = persistedGrant.ClientId
                 });
             }
 
@@ -250,10 +251,12 @@ namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
             using (var context = new PersistedGrantDbContext(options, StoreOptions))
             {
                 var store = new PersistedGrantStore(context, FakeLogger<PersistedGrantStore>.Create());
-                await store.RemoveAllAsync(new PersistedGrantFilter { 
-                    SubjectId = persistedGrant.SubjectId, 
-                    ClientId = persistedGrant.ClientId, 
-                    Type = persistedGrant.Type });
+                await store.RemoveAllAsync(new PersistedGrantFilter
+                {
+                    SubjectId = persistedGrant.SubjectId,
+                    ClientId = persistedGrant.ClientId,
+                    Type = persistedGrant.Type
+                });
             }
 
             using (var context = new PersistedGrantDbContext(options, StoreOptions))
@@ -317,7 +320,8 @@ namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
 
                 await store.RemoveAllAsync(new PersistedGrantFilter
                 {
-                    SubjectId = "sub1", ClientId = "c1"
+                    SubjectId = "sub1",
+                    ClientId = "c1"
                 });
                 context.PersistedGrants.Count().Should().Be(6);
             }
@@ -370,7 +374,7 @@ namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
                 await store.RemoveAllAsync(new PersistedGrantFilter
                 {
                     SubjectId = "sub1",
-                    ClientId = "c1", 
+                    ClientId = "c1",
                     SessionId = "s1"
                 });
                 context.PersistedGrants.Count().Should().Be(8);
@@ -399,7 +403,7 @@ namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
                 {
                     SubjectId = "sub1",
                     ClientId = "c1",
-                    SessionId = "s1", 
+                    SessionId = "s1",
                     Type = "t1"
                 });
                 context.PersistedGrants.Count().Should().Be(9);

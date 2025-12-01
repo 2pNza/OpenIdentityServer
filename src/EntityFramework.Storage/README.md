@@ -1,7 +1,7 @@
-# IdentityServer4.EntityFramework.Storage
+# OpenIdentityServer.EntityFramework.Storage
 
-IdentityServer4.EntityFramework.Storage is a persistence layer for IdentityServer 4 configuration data that uses EntityFramework as its database abstraction.
+OpenIdentityServer.EntityFramework.Storage is a persistence layer for IdentityServer 4 configuration data that uses EntityFramework as its database abstraction.
 
 ## Issues
 
-For issues, use the [consolidated IdentityServer4 issue tracker](https://github.com/LacunaSoftware/IdentityServer4/issues).
+For issues, use the [consolidated OpenIdentityServer issue tracker](https://github.com/LacunaSoftware/OpenIdentityServer/issues).
