@@ -4,6 +4,9 @@ AGPL 3
 
 [![CLA assistant](https://cla-assistant.io/readme/badge/2pNza/OpenIdentityServer)](https://cla-assistant.io/2pNza/OpenIdentityServer)
 
+[![AGPL-3.0 License](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
+
+
 ---
 # OLD README 
 # Important notice
