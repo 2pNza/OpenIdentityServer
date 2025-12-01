@@ -1,10 +1,11 @@
 # NEW README
 
-AGPL 3
+[![CLA assistant](https://cla-assistant.io/readme/badge/2pNza/OpenIdentityServer)](https://cla-assistant.io/2pNza/OpenIdentityServer) [![AGPL-3.0 License](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
 
-[![CLA assistant](https://cla-assistant.io/readme/badge/2pNza/OpenIdentityServer)](https://cla-assistant.io/2pNza/OpenIdentityServer)
 
-[![AGPL-3.0 License](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
+
+<img width="155" height="51" alt="image" src="https://github.com/user-attachments/assets/001fb7f0-78ab-4a24-b8ee-6426c0bf0cef" />
+
 
 
 ---
