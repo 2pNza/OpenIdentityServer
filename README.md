@@ -1,3 +1,9 @@
+# NEW README
+
+AGPL 3
+
+---
+# OLD README 
 # Important notice
 This is a fork of OpenIdentityServer that is meant to keep existing software that depends on OpenIdentityServer updated with the latest .NET framework version.
 
