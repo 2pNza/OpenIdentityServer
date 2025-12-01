@@ -2,6 +2,8 @@
 
 AGPL 3
 
+[![CLA assistant](https://cla-assistant.io/readme/badge/2pNza/OpenIdentityServer)](https://cla-assistant.io/2pNza/OpenIdentityServer)
+
 ---
 # OLD README 
 # Important notice
