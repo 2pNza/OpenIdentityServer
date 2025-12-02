@@ -17,7 +17,7 @@ Founded and maintained by [Dominick Baier](https://twitter.com/leastprivilege) a
 IdentityServer4 is officially [certified](https://openid.net/certification/) by the [OpenID Foundation](https://openid.net) and thus spec-compliant and interoperable.
 It is part of the [.NET Foundation](https://www.dotnetfoundation.org/), and operates under their [code of conduct](https://www.dotnetfoundation.org/code-of-conduct). It is licensed under [Apache 2](https://opensource.org/licenses/Apache-2.0) (an OSI approved license).
 
-For project documentation, please visit [readthedocs](https://identityserver4.readthedocs.io).
+For project documentation, please visit [readthedocs](https://openidentityserver.readthedocs.io).
 
 ## Branch structure
 Active development happens on the main branch. This always contains the latest version. Each (pre-) release is tagged with the corresponding version.
@@ -30,7 +30,7 @@ Active development happens on the main branch. This always contains the latest v
 * Run `build.ps1` or `build.sh` in the root of the cloned repo
 
 ## Documentation
-For project documentation, please visit [readthedocs](https://identityserver4.readthedocs.io).
+For project documentation, please visit [readthedocs](https://openidentityserver.readthedocs.io).
 
 ## Bug reports and feature requests
 Please use the [issue tracker](https://github.com/LacunaSoftware/IdentityServer4/issues) for that.
