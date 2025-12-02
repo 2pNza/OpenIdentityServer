@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
 
-    <PackageId>Lacuna.IdentityServer4.Storage</PackageId>
+    <PackageId>2pNza.OpenIdentityServer.Storage</PackageId>
     <Description>Storage interfaces and models for IdentityServer4</Description>
     <Authors>Brock Allen;Dominick Baier;Lacuna Software</Authors>
 	<AssemblyName>IdentityServer4.Storage</AssemblyName>

@@ -1,16 +1,15 @@
 <Project>
 
   <PropertyGroup>
+    <Version>0.0.1</Version>
     <FrameworkVersion>8.0.14</FrameworkVersion>
-    <ExtensionsVersion>8.0.1</ExtensionsVersion>
+    <ExtensionsVersion>0.0.1</ExtensionsVersion>
     <EntityFrameworkVersion>8.0.14</EntityFrameworkVersion>
-    
-    <IdentityServerVersion>8.0.*</IdentityServerVersion>
+    <LacunaIdentityServerVersion>8.0.0</LacunaIdentityServerVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <!--build related-->
-    <PackageReference Include="MinVer" Version="2.3.0" PrivateAssets="All" />
     <PackageReference Update="SimpleExec" Version="6.2.0" />
     <PackageReference Update="Bullseye" Version="3.3.0" />
     <PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
@@ -24,11 +23,11 @@
     <!--our stuff -->
     <PackageReference Update="IdentityModel" Version="4.4.0" />
 
-    <PackageReference Update="Lacuna.IdentityServer4" Version="$(IdentityServerVersion)" />
-    <PackageReference Update="Lacuna.IdentityServer4.AspNetIdentity" Version="$(IdentityServerVersion)" />
-    <PackageReference Update="Lacuna.IdentityServer4.Storage" Version="$(IdentityServerVersion)" />
-    <PackageReference Update="Lacuna.IdentityServer4.EntityFramework.Storage" Version="$(IdentityServerVersion)" />
-    <PackageReference Update="Lacuna.IdentityServer4.EntityFramework" Version="$(IdentityServerVersion)" />
+    <PackageReference Update="Lacuna.IdentityServer4" Version="$(LacunaIdentityServerVersion)" />
+    <PackageReference Update="Lacuna.IdentityServer4.AspNetIdentity" Version="$(LacunaIdentityServerVersion)" />
+    <PackageReference Update="Lacuna.IdentityServer4.Storage" Version="$(LacunaIdentityServerVersion)" />
+    <PackageReference Update="Lacuna.IdentityServer4.EntityFramework.Storage" Version="$(LacunaIdentityServerVersion)" />
+    <PackageReference Update="Lacuna.IdentityServer4.EntityFramework" Version="$(LacunaIdentityServerVersion)" />
 
     <!--microsoft extensions -->
     <PackageReference Update="Microsoft.Extensions.Caching.Memory" Version="$(ExtensionsVersion)" />
@@ -61,9 +60,9 @@
 
   </ItemGroup>
 
-  <Target Name="SetAssemblyVersion" AfterTargets="MinVer">
+ <!-- <Target Name="SetAssemblyVersion" AfterTargets="MinVer">
     <PropertyGroup>
       <AssemblyVersion>$(MinVerMajor).$(MinVerMinor).$(MinVerPatch).0</AssemblyVersion>
     </PropertyGroup>
-  </Target>
+  </Target> -->
 </Project>

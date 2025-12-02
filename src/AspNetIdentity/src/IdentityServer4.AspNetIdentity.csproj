@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <PackageId>Lacuna.IdentityServer4.AspNetIdentity</PackageId>
+    <PackageId>2pNza.OpenIdentityServer.AspNetIdentity</PackageId>
     <TargetFrameworks>net8.0</TargetFrameworks>
     
     <Description>ASP.NET Core Identity Integration for IdentityServer4</Description>
