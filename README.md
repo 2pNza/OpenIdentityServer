@@ -7,6 +7,28 @@
 
 <img width="155" height="51" alt="image" src="https://github.com/user-attachments/assets/683e5ff5-2721-4e0a-aa46-32a1ff060986" />
 
+---
+
+### WARNING! 
+This version is experimental! Wait for version 1.0.0. If you use it, you do so at your own risk.
+
+**2pNza.OpenIdentityServer**  
+  [![NuGet](https://img.shields.io/nuget/v/2pNza.OpenIdentityServer.svg)](https://www.nuget.org/packages/2pNza.OpenIdentityServer/)
+
+**2pNza.OpenIdentityServer.AspNetIdentity**  
+  [![NuGet](https://img.shields.io/nuget/v/2pNza.OpenIdentityServer.AspNetIdentity.svg)](https://www.nuget.org/packages/2pNza.OpenIdentityServer.AspNetIdentity/)
+
+**2pNza.OpenIdentityServer.EntityFramework**  
+  [![NuGet](https://img.shields.io/nuget/v/2pNza.OpenIdentityServer.EntityFramework.svg)](https://www.nuget.org/packages/2pNza.OpenIdentityServer.EntityFramework/)
+
+**2pNza.OpenIdentityServer.EntityFramework.Storage**  
+  [![NuGet](https://img.shields.io/nuget/v/2pNza.OpenIdentityServer.EntityFramework.Storage.svg)](https://www.nuget.org/packages/2pNza.OpenIdentityServer.EntityFramework.Storage/)
+
+**2pNza.OpenIdentityServer.Storage**  
+  [![NuGet](https://img.shields.io/nuget/v/2pNza.OpenIdentityServer.Storage.svg)](https://www.nuget.org/packages/2pNza.OpenIdentityServer.Storage/)
+
+---
+
 The project during the renaming process
 
 ---
