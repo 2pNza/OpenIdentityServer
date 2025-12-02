@@ -7,6 +7,7 @@
 
 <img width="155" height="51" alt="image" src="https://github.com/user-attachments/assets/683e5ff5-2721-4e0a-aa46-32a1ff060986" />
 
+The project during the renaming process
 
 ---
 ## Old README
