@@ -15,7 +15,7 @@ If time permits, we also try to answer as many questions as possible
 
 You can subscribe to all IdentityServer4 related questions using this feed:
 
-https://stackoverflow.com/questions/tagged/?tagnames=openidentityserver&sort=newest
+https://stackoverflow.com/questions/tagged/?tagnames=identityserver4&sort=newest
 
 Please use the ``IdentityServer4`` tag when asking new questions
 

@@ -204,7 +204,7 @@ tools/
 .vscode
 
 # IdentityServer temp files
-openidentityserver_log.txt
+identityserver4_log.txt
 tempkey.rsa
 samples/KeyManagement/FileSystem/dataprotectionkeys/
 samples/KeyManagement/FileSystem/signingkeys/
