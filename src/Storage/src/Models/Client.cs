@@ -8,7 +8,7 @@ using System;
 using System.Collections;
 using System.Diagnostics;
 
-namespace IdentityServer4.Models
+namespace OpenIdentityServer.Models
 {
     /// <summary>
     /// Models an OpenID Connect or OAuth2 client
@@ -106,7 +106,7 @@ namespace IdentityServer4.Models
         /// Specifies whether the client must use a request object on authorize requests (defaults to <c>false</c>.)
         /// </summary>
         public bool RequireRequestObject { get; set; } = false;
-        
+
         /// <summary>
         /// Controls whether access tokens are transmitted via the browser for this client (defaults to <c>false</c>).
         /// This can prevent accidental leakage of access tokens when multiple response types are allowed.

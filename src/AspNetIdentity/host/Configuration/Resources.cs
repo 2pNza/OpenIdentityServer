@@ -3,9 +3,9 @@
 
 
 using IdentityModel;
-using IdentityServer4.Models;
+using OpenIdentityServer.Models;
 using System.Collections.Generic;
-using static IdentityServer4.IdentityServerConstants;
+using static OpenIdentityServer.IdentityServerConstants;
 
 namespace IdentityServerHost.Configuration
 {
@@ -49,7 +49,7 @@ namespace IdentityServerHost.Configuration
             };
 
         // API resources are more formal representation of a resource with processing rules and their scopes (if any)
-        public static readonly IEnumerable<ApiResource> ApiResources = 
+        public static readonly IEnumerable<ApiResource> ApiResources =
             new[]
             {
                 new ApiResource("resource1", "Resource 1")

@@ -2,22 +2,22 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-using IdentityServer4.Extensions;
-using IdentityServer4.Models;
-using IdentityServer4.Services;
+using OpenIdentityServer.Extensions;
+using OpenIdentityServer.Models;
+using OpenIdentityServer.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace IdentityServer4.AspNetIdentity
+namespace OpenIdentityServer.AspNetIdentity
 {
     /// <summary>
     /// IProfileService to integrate with ASP.NET Identity.
     /// </summary>
     /// <typeparam name="TUser">The type of the user.</typeparam>
-    /// <seealso cref="IdentityServer4.Services.IProfileService" />
+    /// <seealso cref="OpenIdentityServer.Services.IProfileService" />
     public class ProfileService<TUser> : IProfileService
         where TUser : class
     {
@@ -25,7 +25,7 @@ namespace IdentityServer4.AspNetIdentity
         /// The claims factory.
         /// </summary>
         protected readonly IUserClaimsPrincipalFactory<TUser> ClaimsFactory;
-        
+
         /// <summary>
         /// The logger
         /// </summary>
@@ -112,7 +112,7 @@ namespace IdentityServer4.AspNetIdentity
         {
             var principal = await ClaimsFactory.CreateAsync(user);
             if (principal == null) throw new Exception("ClaimsFactory failed to create a principal");
-            
+
             return principal;
         }
 

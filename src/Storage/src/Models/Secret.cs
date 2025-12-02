@@ -4,7 +4,7 @@
 
 using System;
 
-namespace IdentityServer4.Models
+namespace OpenIdentityServer.Models
 {
     /// <summary>
     /// Models a client secret with identifier and expiration
@@ -109,7 +109,7 @@ namespace IdentityServer4.Models
             if (other == null) return false;
             if (ReferenceEquals(other, this)) return true;
 
-            return String.Equals(other.Type, Type, StringComparison.Ordinal) && 
+            return String.Equals(other.Type, Type, StringComparison.Ordinal) &&
                 String.Equals(other.Value, Value, StringComparison.Ordinal);
         }
     }

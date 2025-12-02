@@ -4,7 +4,7 @@
 
 using System;
 
-namespace IdentityServer4.Models
+namespace OpenIdentityServer.Models
 {
     /// <summary>
     /// A model for a persisted grant
@@ -42,7 +42,7 @@ namespace IdentityServer4.Models
         /// The session identifier.
         /// </value>
         public string SessionId { get; set; }
-        
+
         /// <summary>
         /// Gets the client identifier.
         /// </summary>
@@ -74,7 +74,7 @@ namespace IdentityServer4.Models
         /// The expiration.
         /// </value>
         public DateTime? Expiration { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the consumed time.
         /// </summary>

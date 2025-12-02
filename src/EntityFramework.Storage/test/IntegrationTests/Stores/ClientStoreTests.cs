@@ -6,22 +6,22 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
-using IdentityServer4.EntityFramework.DbContexts;
-using IdentityServer4.EntityFramework.Mappers;
-using IdentityServer4.EntityFramework.Options;
-using IdentityServer4.EntityFramework.Stores;
-using IdentityServer4.Models;
+using OpenIdentityServer.EntityFramework.DbContexts;
+using OpenIdentityServer.EntityFramework.Mappers;
+using OpenIdentityServer.EntityFramework.Options;
+using OpenIdentityServer.EntityFramework.Stores;
+using OpenIdentityServer.Models;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 using Xunit.Sdk;
 
-namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
+namespace OpenIdentityServer.EntityFramework.IntegrationTests.Stores
 {
     public class ClientStoreTests : IntegrationTest<ClientStoreTests, ConfigurationDbContext, ConfigurationStoreOptions>
     {
         public ClientStoreTests(DatabaseProviderFixture<ConfigurationDbContext> fixture) : base(fixture)
         {
-            foreach (var options in TestDatabaseProviders.SelectMany(x => x.Select(y => (DbContextOptions<ConfigurationDbContext>) y)).ToList())
+            foreach (var options in TestDatabaseProviders.SelectMany(x => x.Select(y => (DbContextOptions<ConfigurationDbContext>)y)).ToList())
             {
                 using (var context = new ConfigurationDbContext(options, StoreOptions))
                 {
@@ -73,15 +73,15 @@ namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
             {
                 ClientId = "properties_test_client",
                 ClientName = "Properties Test Client",
-                AllowedCorsOrigins = {"https://localhost"},
+                AllowedCorsOrigins = { "https://localhost" },
                 AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
-                AllowedScopes = {"openid", "profile", "api1"},
-                Claims = {new ClientClaim("test", "value")},
-                ClientSecrets = {new Secret("secret".Sha256())},
-                IdentityProviderRestrictions = {"AD"},
-                PostLogoutRedirectUris = {"https://locahost/signout-callback"},
-                Properties = {{"foo1", "bar1"}, {"foo2", "bar2"},},
-                RedirectUris = {"https://locahost/signin"}
+                AllowedScopes = { "openid", "profile", "api1" },
+                Claims = { new ClientClaim("test", "value") },
+                ClientSecrets = { new Secret("secret".Sha256()) },
+                IdentityProviderRestrictions = { "AD" },
+                PostLogoutRedirectUris = { "https://locahost/signout-callback" },
+                Properties = { { "foo1", "bar1" }, { "foo2", "bar2" }, },
+                RedirectUris = { "https://locahost/signin" }
             };
 
             using (var context = new ConfigurationDbContext(options, StoreOptions))
@@ -107,7 +107,7 @@ namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
             {
                 ClientId = "test_client_with_uris",
                 ClientName = "Test client with URIs",
-                AllowedScopes = {"openid", "profile", "api1"},
+                AllowedScopes = { "openid", "profile", "api1" },
                 AllowedGrantTypes = GrantTypes.CodeAndClientCredentials
             };
 
@@ -138,7 +138,7 @@ namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
 
                 context.SaveChanges();
             }
-            
+
             using (var context = new ConfigurationDbContext(options, StoreOptions))
             {
                 var store = new ClientStore(context, FakeLogger<ClientStore>.Create());

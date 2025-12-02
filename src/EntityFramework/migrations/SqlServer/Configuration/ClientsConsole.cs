@@ -2,8 +2,8 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 using System.Collections.Generic;
-using IdentityServer4;
-using IdentityServer4.Models;
+using OpenIdentityServer;
+using OpenIdentityServer.Models;
 
 namespace IdentityServerHost.Configuration
 {
@@ -57,7 +57,7 @@ namespace IdentityServerHost.Configuration
                             Type = IdentityServerConstants.SecretTypes.X509CertificateThumbprint
                         },
                     },
-                    
+
                     AccessTokenType = AccessTokenType.Jwt,
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     AllowedScopes = { "resource1.scope1", "resource2.scope1" }
@@ -84,7 +84,7 @@ namespace IdentityServerHost.Configuration
                                 "{'e':'AQAB','kid':'ZzAjSnraU3bkWGnnAqLapYGpTyNfLbjbzgAPbbW2GEA','kty':'RSA','n':'wWwQFtSzeRjjerpEM5Rmqz_DsNaZ9S1Bw6UbZkDLowuuTCjBWUax0vBMMxdy6XjEEK4Oq9lKMvx9JzjmeJf1knoqSNrox3Ka0rnxXpNAz6sATvme8p9mTXyp0cX4lF4U2J54xa2_S9NF5QWvpXvBeC4GAJx7QaSw4zrUkrc6XyaAiFnLhQEwKJCwUw4NOqIuYvYp_IXhw-5Ti_icDlZS-282PcccnBeOcX7vc21pozibIdmZJKqXNsL1Ibx5Nkx1F1jLnekJAmdaACDjYRLL_6n3W4wUp19UvzB1lGtXcJKLLkqB6YDiZNu16OSiSprfmrRXvYmvD8m6Fnl5aetgKw'}"
                         }
                     },
-                    
+
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     AllowedScopes = { "resource1.scope1", "resource2.scope1" }
                 },

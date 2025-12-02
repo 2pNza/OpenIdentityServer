@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace IdentityServer4.Models
+namespace OpenIdentityServer.Models
 {
     /// <summary>
     /// Models the common data of API and identity resources.
@@ -29,7 +29,7 @@ namespace IdentityServer4.Models
         /// Display name of the resource.
         /// </summary>
         public string DisplayName { get; set; }
-        
+
         /// <summary>
         /// Description of the resource.
         /// </summary>

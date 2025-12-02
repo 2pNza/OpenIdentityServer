@@ -6,9 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IdentityServer4.EntityFramework.Mappers
+namespace OpenIdentityServer.EntityFramework.Mappers
 {
-   internal static class AllowedSigningAlgorithmsConverter
+    internal static class AllowedSigningAlgorithmsConverter
     {
         public static string Convert(ICollection<string> sourceMember)
         {

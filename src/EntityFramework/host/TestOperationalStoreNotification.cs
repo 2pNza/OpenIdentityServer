@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using IdentityServer4.EntityFramework;
-using IdentityServer4.EntityFramework.Entities;
+using OpenIdentityServer.EntityFramework;
+using OpenIdentityServer.EntityFramework.Entities;
 
 namespace IdentityServerHost
 {
@@ -24,7 +24,7 @@ namespace IdentityServerHost
 
         public Task DeviceCodesRemovedAsync(IEnumerable<DeviceFlowCodes> deviceCodes)
         {
-            foreach (var deviceCode in deviceCodes) 
+            foreach (var deviceCode in deviceCodes)
             {
                 Console.WriteLine("cleaned device code");
             }

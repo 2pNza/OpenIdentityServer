@@ -10,9 +10,9 @@ using System.Linq;
 
 #pragma warning disable 1591
 
-namespace IdentityServer4.Stores.Serialization
+namespace OpenIdentityServer.Stores.Serialization
 {
-    public class CustomContractResolver: DefaultContractResolver
+    public class CustomContractResolver : DefaultContractResolver
     {
         protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
         {

@@ -5,13 +5,13 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using IdentityServer4.EntityFramework.Entities;
-using IdentityServer4.EntityFramework.Interfaces;
-using IdentityServer4.EntityFramework.Options;
+using OpenIdentityServer.EntityFramework.Entities;
+using OpenIdentityServer.EntityFramework.Interfaces;
+using OpenIdentityServer.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace IdentityServer4.EntityFramework
+namespace OpenIdentityServer.EntityFramework
 {
     /// <summary>
     /// Helper to cleanup stale persisted grants and device codes.
@@ -32,7 +32,7 @@ namespace IdentityServer4.EntityFramework
         /// <param name="logger"></param>
         public TokenCleanupService(
             OperationalStoreOptions options,
-            IPersistedGrantDbContext persistedGrantDbContext, 
+            IPersistedGrantDbContext persistedGrantDbContext,
             ILogger<TokenCleanupService> logger,
             IOperationalStoreNotification operationalStoreNotification = null)
         {
@@ -71,7 +71,7 @@ namespace IdentityServer4.EntityFramework
         protected virtual async Task RemoveGrantsAsync()
         {
             var found = Int32.MaxValue;
-            
+
             while (found >= _options.TokenCleanupBatchSize)
             {
                 var expiredGrants = await _persistedGrantDbContext.PersistedGrants

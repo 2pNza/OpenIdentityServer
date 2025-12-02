@@ -2,12 +2,12 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-using IdentityServer4.Extensions;
+using OpenIdentityServer.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace IdentityServer4.Models
+namespace OpenIdentityServer.Models
 {
     /// <summary>
     /// Models access to an API scope
@@ -16,7 +16,7 @@ namespace IdentityServer4.Models
     public class ApiScope : Resource
     {
         private string DebuggerDisplay => Name ?? $"{{{typeof(ApiScope)}}}";
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiScope"/> class.
         /// </summary>
