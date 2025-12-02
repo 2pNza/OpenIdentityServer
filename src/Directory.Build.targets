@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Version>0.0.1</Version>
     <FrameworkVersion>8.0.14</FrameworkVersion>
-    <ExtensionsVersion>0.0.1</ExtensionsVersion>
+    <ExtensionsVersion>8.0.1</ExtensionsVersion>
     <EntityFrameworkVersion>8.0.14</EntityFrameworkVersion>
     <LacunaIdentityServerVersion>8.0.0</LacunaIdentityServerVersion>
   </PropertyGroup>
