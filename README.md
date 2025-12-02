@@ -1,3 +1,10 @@
+# NEW README
+
+**OpenIdentityServer**
+
+---
+## Old README
+
 # Important notice
 This is a fork of IdentityServer4 that is meant to keep existing software that depends on IdentityServer4 updated with the latest .NET framework version.
 
